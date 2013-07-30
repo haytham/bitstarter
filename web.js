@@ -8,7 +8,12 @@ app.get('/', function(request, response) {
   response.send( fs.readFileSync( './index.html' ).toString() );
 });
 
-var port = process.env.PORT || 5000;
+// heroku
+//var port = process.env.PORT || 5000;
+
+// amazon ec2 port
+var port = process.env.PORT || 8080;
+
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
